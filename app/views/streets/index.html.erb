@@ -1,0 +1,11 @@
+<% provide(:title, 'All users') %>
+<h1>Улицы</h1>
+
+<ul class="users">
+  <% @street.each do |street| %>
+    <li>
+
+      <%= link_to street.name, street %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,20 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= following_user_path(@user) %>">
+    <strong id="following" class="stat">
+      <%= @user.followed_streets.count %>
+    </strong>
+    Наблюдает за улицами
+  </a>
+
+
+</div>
+
+<br>
+Улица
+    <a href="<%= street_path(@user.street) %>">
+    <strong id="followers" class="stat">
+      <%= @user.street.name %>
+    </strong>
+  </a>
+

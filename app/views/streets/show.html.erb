@@ -1,0 +1,36 @@
+<% provide(:title, @street.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <%= render 'follow_form' %>
+    <%= @street.name %>
+    <a href="<%= followers_street_path(@street) %>">
+      <%= @street.followers.count %>
+    <% if @street.microposts.any? %>
+      <h3> (<%= @street.microposts.count %>)</h3>
+    
+    <a href="<%= followers_street_path(@street) %>">
+    <strong id="followers" class="stat">
+      <%= @street.followers.count %>
+    </strong>
+    followers
+  </a>
+
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+
+    <% end %>
+  </div>
+</div>

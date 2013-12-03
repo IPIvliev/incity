@@ -1,0 +1,7 @@
+<li>
+  <%= link_to street.name, street %>
+  <% if current_user.admin? %>
+    | <%= link_to "delete", street, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
